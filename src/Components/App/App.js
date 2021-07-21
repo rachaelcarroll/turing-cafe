@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount = () => {
     getReservations()
-    .then(reservations => this.setState({ reservations: reservations })
+    .then(reservations => this.setState({ reservations: reservations }))
     .catch(() => this.setState({ error: 'Oops! Something went wrong, please try again.'}))
   }
 
@@ -29,15 +29,16 @@ class App extends Component {
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
           <Form 
-            addReso={this.addReso}
+            addReso= {this.addReso}
           />
         </div>
         <div className='resy-container'>
-          <Reservations reservations = {this.state.reservations}/>
+          <Reservations reservations= {this.state.reservations}/>
         </div>
       </div>
     )
   }
 }
+
 
 export default App;
