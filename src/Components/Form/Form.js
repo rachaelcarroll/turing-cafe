@@ -24,7 +24,7 @@ class Form extends Component {
             id: Date.now(),
             ...this.state
         }
-        this.props.addReservation(newReso)
+        this.props.addReso(newReso)
         this.clearInputFields()
     } 
 
@@ -63,7 +63,8 @@ class Form extends Component {
                     value={this.state.number}
                     onChange={(event) => this.handleChange(event)}
                 />
-                <button className='submitReso' onClick={(event) => this.submitReservation(event)}>
+                <button className='submitReso' 
+                    onClick={(event) => this.submitReservation(event)}>
                     Make Reservation
                 </button>
             </form>

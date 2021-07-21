@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getReservations } from '../../apiCalls'
+import Reservations from '../Reservations/Reservations'
+import Form from '../Form/Form'
 
 class App extends Component {
   constructor () {
@@ -16,13 +18,19 @@ class App extends Component {
     .catch(() => this.setState({ error: 'Oops! Something went wrong, please try again.'}))
   }
 
+  addReso = (newReso) => {
+    this.setState({ reservations: [...this.state.reservations, newReso] })
+  }
 
+ 
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form />
+          <Form 
+            addReso={this.addReso}
+          />
         </div>
         <div className='resy-container'>
           <Reservations reservations = {this.state.reservations}/>
