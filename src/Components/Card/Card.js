@@ -7,8 +7,8 @@ const Card = ({id, name, date, time, number}) => {
         <article className='resoCard'>
             <h3>{name}</h3>
             <p>{date}</p>
-            <p>{time}</p>
-            <p>{number}</p>
+            <p>{time} pm</p>
+            <p>Number of Guests: {number}</p>
             <button>Cancel Reservation</button>
         </article>
     )
