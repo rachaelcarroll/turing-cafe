@@ -38,14 +38,14 @@ class Form extends Component {
                 <input 
                     type='text'
                     name='name'
-                    placeholder='Full Name'
+                    placeholder='Name'
                     value={this.state.name}
                     onChange={(event) => this.handleChange(event)}
                 />
                 <input 
                     type='text'
                     name='date'
-                    placeholder='Date'
+                    placeholder='Date (mm/dd)'
                     value={this.state.date}
                     onChange={(event) => this.handleChange(event)}
                 />
