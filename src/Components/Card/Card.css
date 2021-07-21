@@ -1,0 +1,22 @@
+.resoCard {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background-color: whitesmoke;
+    border: 2px solid teal;
+    color: teal;
+}
+
+button {
+    height: 40px;
+    width: 55px;
+    background-color: teal;
+    border: 1px solid teal;
+    color: whitesmoke;
+}
+
+button:hover {
+    background-color: whitesmoke;
+    color: teal;
+    transform: scale(1.07);
+}
