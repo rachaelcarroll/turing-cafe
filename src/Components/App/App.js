@@ -13,19 +13,19 @@ class App extends Component {
   componentDidMount = () => {
     getReservations()
     .then(reservations => this.setState({ reservations: reservations })
-    .catch(() => this.setState({ error: 'Oops, something went wrong, please try again!'}))
+    .catch(() => this.setState({ error: 'Oops! Something went wrong, please try again.'}))
   }
 
-  
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form />
         </div>
         <div className='resy-container'>
-          
+          <Reservations reservations = {this.state.reservations}/>
         </div>
       </div>
     )
