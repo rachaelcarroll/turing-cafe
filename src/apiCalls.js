@@ -3,24 +3,18 @@ export const getReservations = () => {
       .then(response => response.json())
   }
 
-export const addReservation = (reservation) => {
+export const addReservation = (id, name, date, time, number) => {
   fetch('http://localhost:3001/api/v1/reservations', {
       method: 'POST',
-      body: JSON.stringify({
-        "name": reservation.name,
-        "date": reservation.date,
-        "time": reservation.time,
-        "number": reservation.number,
-      }),
+      body: JSON.stringify({ 
+        id: id, 
+        name: name, 
+        time: time, 
+        date: date, 
+        number: number}),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => {
-      if (response.ok) {
-        return response
-      } else {
-        throw new Error('We are experiencing technical difficulties, please try again later!')
-      }
-    })
+    .then(response => response.json())
 }

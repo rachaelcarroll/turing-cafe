@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getReservations } from '../../apiCalls'
+import { getReservations, addReservation } from '../../apiCalls'
 import Reservations from '../Reservations/Reservations'
 import Form from '../Form/Form'
 
@@ -13,15 +13,20 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    this.updateData()
+  }
+  
+  updateData = () => {
     getReservations()
     .then(reservations => this.setState({ reservations: reservations }))
     .catch(() => this.setState({ error: 'Oops! Something went wrong, please try again.'}))
   }
 
-  addReso = (newReso) => {
-    this.setState({ reservations: [...this.state.reservations, newReso] })
+  addReso = ({id, name, date, time, number}) => {
+    console.log({id, name, date, time, number})
+    addReservation(id, name, date, time, number)  
+    this.updateData()
   }
-
  
   render() {
     return (
