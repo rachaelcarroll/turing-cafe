@@ -16,5 +16,11 @@ export const addReservation = (reservation) => {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        throw new Error('We are experiencing technical difficulties, please try again later!')
+      }
+    })
 }
